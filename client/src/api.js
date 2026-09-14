@@ -15,6 +15,12 @@ export async function fetchProducts(params = {}) {
   return res.json();
 }
 
+export async function fetchProductById(id) {
+  const res = await fetch(`${BASE_URL}/products/${id}`);
+  if (!res.ok) throw new Error("Product not found");
+  return res.json();
+}
+
 export async function fetchCategories() {
   const res = await fetch(`${BASE_URL}/categories`);
   if (!res.ok) throw new Error("Failed to fetch categories");

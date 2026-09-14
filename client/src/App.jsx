@@ -1,54 +1,53 @@
-import { useEffect, useState, useCallback } from "react";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import FilterBar from "./components/FilterBar.jsx";
-import ProductGrid from "./components/ProductGrid.jsx";
+import Footer from "./components/Footer.jsx";
 import CartDrawer from "./components/CartDrawer.jsx";
-import { fetchProducts, fetchCategories } from "./api.js";
+
+// Pages
+import Home from "./pages/Home.jsx";
+import Shop from "./pages/Shop.jsx";
+import ProductDetail from "./pages/ProductDetail.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+
+// Scroll to Top helper on route navigation
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 export default function App() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [categories, setCategories] = useState([]);
-  const [category, setCategory] = useState("all");
-  const [search, setSearch] = useState("");
-  const [stockFilter, setStockFilter] = useState("");
-  const [newOnly, setNewOnly] = useState(false);
-  const [sort, setSort] = useState("");
-
   const [cartOpen, setCartOpen] = useState(false);
-  const [cart, setCart] = useState([]); // [{...product, quantity}]
-
-  useEffect(() => {
-    fetchCategories()
-      .then((data) => setCategories(data.categories || []))
-      .catch((err) => console.warn("Could not fetch categories:", err.message));
-  }, []);
-
-  const loadProducts = useCallback(async () => {
-    setLoading(true);
-    setError(null);
+  const [cart, setCart] = useState(() => {
     try {
-      const data = await fetchProducts({
-        category: category !== "all" ? category : "",
-        search,
-        inStock: stockFilter,
-        isNew: newOnly ? "true" : "",
-        sort
-      });
-      setProducts(data.products || []);
-    } catch (err) {
-      console.error(err);
-      setError("Unable to connect to backend server. Make sure the backend is running at http://localhost:4000.");
-    } finally {
-      setLoading(false);
+      const saved = localStorage.getItem("servis_bags_cart");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
     }
-  }, [category, search, stockFilter, newOnly, sort]);
+  });
 
+  const [toastMessage, setToastMessage] = useState(null);
+
+  // Sync cart to localStorage
   useEffect(() => {
-    const timeout = setTimeout(loadProducts, 250); // debounce search
-    return () => clearTimeout(timeout);
-  }, [loadProducts]);
+    try {
+      localStorage.setItem("servis_bags_cart", JSON.stringify(cart));
+    } catch (e) {
+      console.warn("Could not persist cart to localStorage:", e);
+    }
+  }, [cart]);
+
+  function showToast(msg) {
+    setToastMessage(msg);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  }
 
   function addToCart(product) {
     setCart((prev) => {
@@ -60,6 +59,7 @@ export default function App() {
       }
       return [...prev, { ...product, quantity: 1 }];
     });
+    showToast(`Added "${product.title}" to cart!`);
     setCartOpen(true);
   }
 
@@ -72,9 +72,7 @@ export default function App() {
   function decrement(id) {
     setCart((prev) =>
       prev
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-        )
+        .map((item) => (item.id === id ? { ...item, quantity: item.quantity - 1 } : item))
         .filter((item) => item.quantity > 0)
     );
   }
@@ -86,57 +84,54 @@ export default function App() {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header
-        search={search}
-        onSearchChange={setSearch}
-        cartCount={cartCount}
-        onCartClick={() => setCartOpen(true)}
-        categories={categories}
-        activeCategory={category}
-        onSelectCategory={setCategory}
-      />
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-gray-50 flex flex-col selection:bg-brand selection:text-white">
+        {/* Persistent Header */}
+        <Header cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
 
-      <div className="bg-white border-b border-gray-100 py-4 text-center">
-        <h1 className="text-xl font-bold text-gray-800">
-          {category === "all" ? "All School Bags" : `${category.charAt(0).toUpperCase() + category.slice(1)} School Bags`}
-        </h1>
-        <p className="text-sm text-gray-500 mt-1">
-          Durable, spacious backpacks built for the school run.
-        </p>
+        {/* Global Toast Notification */}
+        {toastMessage && (
+          <div className="fixed bottom-5 right-5 z-50 bg-neutral-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-bold flex items-center gap-2 border border-neutral-700 animate-in slide-in-from-bottom-5">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>{toastMessage}</span>
+          </div>
+        )}
+
+        {/* Main Content Router */}
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home onAddToCart={addToCart} />} />
+            <Route path="/shop" element={<Shop onAddToCart={addToCart} />} />
+            <Route
+              path="/product/:id"
+              element={
+                <ProductDetail
+                  onAddToCart={addToCart}
+                  onBuyNow={() => setCartOpen(true)}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home onAddToCart={addToCart} />} />
+          </Routes>
+        </main>
+
+        {/* Slide-over Cart Drawer */}
+        <CartDrawer
+          open={cartOpen}
+          onClose={() => setCartOpen(false)}
+          cartItems={cart}
+          onIncrement={increment}
+          onDecrement={decrement}
+          onRemove={removeItem}
+          onOrderComplete={() => setCart([])}
+        />
+
+        {/* Professional Footer */}
+        <Footer />
       </div>
-
-      <FilterBar
-        count={products.length}
-        stockFilter={stockFilter}
-        onStockChange={setStockFilter}
-        newOnly={newOnly}
-        onNewOnlyChange={setNewOnly}
-        sort={sort}
-        onSortChange={setSort}
-      />
-
-      <ProductGrid
-        products={products}
-        loading={loading}
-        error={error}
-        onRetry={loadProducts}
-        onAddToCart={addToCart}
-      />
-
-      <CartDrawer
-        open={cartOpen}
-        onClose={() => setCartOpen(false)}
-        cartItems={cart}
-        onIncrement={increment}
-        onDecrement={decrement}
-        onRemove={removeItem}
-        onOrderComplete={() => setCart([])}
-      />
-
-      <footer className="text-center text-xs text-gray-400 py-8">
-        Portfolio demo project — not affiliated with any real retailer.
-      </footer>
-    </div>
+    </BrowserRouter>
   );
 }
