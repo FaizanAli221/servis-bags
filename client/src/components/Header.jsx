@@ -29,12 +29,19 @@ export default function Header({ cartCount, onCartClick }) {
               <ShieldCheck size={14} className="text-emerald-400" /> 1-Year Official Warranty
             </span>
           </div>
-          <div className="flex items-center gap-4 text-neutral-400">
-            <a href="tel:+923001234567" className="hover:text-white flex items-center gap-1 transition-colors">
-              <Phone size={12} /> Helpline: +92 300 1234567
+          <div className="flex items-center gap-4 text-neutral-300">
+            <a
+              href="https://wa.me/923337285603?text=Hi%20Servis%20Bags%2C%20I%20have%20an%20inquiry"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-emerald-400 flex items-center gap-1.5 transition-colors font-semibold"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              WhatsApp: 0333 7285603
             </a>
-            <Link to="/contact" className="hover:text-white underline transition-colors">
-              Track Order
+            <span className="hidden sm:inline text-neutral-600">•</span>
+            <Link to="/contact" className="hover:text-white underline transition-colors hidden sm:inline">
+              Track Order / FAQs
             </Link>
           </div>
         </div>
@@ -226,6 +233,15 @@ export default function Header({ cartCount, onCartClick }) {
             >
               Customer Support & FAQs
             </Link>
+
+            <a
+              href="https://wa.me/923337285603?text=Hi%20Servis%20Bags%2C%20I%20have%20an%20inquiry"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-colors"
+            >
+              💬 WhatsApp Us: 0333 7285603
+            </a>
           </div>
         </div>
       )}

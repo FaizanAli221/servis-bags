@@ -16,7 +16,7 @@ const FAQS = [
   },
   {
     q: "What is your return & exchange policy?",
-    a: "We provide a 7-day hassle-free return and exchange window. If your child prefers a different color or size, simply contact our WhatsApp support at +92 300 1234567 and we will arrange an exchange."
+    a: "We provide a 7-day hassle-free return and exchange window. If your child prefers a different color or size, simply contact our WhatsApp support at 0333-7285603 and we will arrange an exchange."
   },
   {
     q: "Are the bags water-resistant?",
@@ -55,9 +55,9 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-gray-900">Phone Helpline</h3>
-              <p className="text-xs text-gray-500 mt-0.5">Call our friendly support team</p>
-              <a href="tel:+923001234567" className="text-sm font-bold text-brand block mt-1 hover:underline">
-                +92 300 1234567
+              <p className="text-xs text-gray-500 mt-0.5">Call our support team directly</p>
+              <a href="tel:03337285603" className="text-base font-black text-brand block mt-1 hover:underline">
+                0333 7285603
               </a>
             </div>
           </div>
@@ -68,14 +68,15 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-gray-900">WhatsApp Live Chat</h3>
-              <p className="text-xs text-gray-500 mt-0.5">Fast replies within 15 minutes</p>
+              <p className="text-xs text-gray-500 mt-0.5">Direct quick support & order booking</p>
               <a
-                href="https://wa.me/923001234567"
+                href="https://wa.me/923337285603?text=Hi%20Servis%20Bags%2C%20I%20want%20to%20inquire%20about%20a%20school%20bag"
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md inline-block mt-2 hover:bg-emerald-100 transition-colors"
+                className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg inline-flex items-center gap-1.5 mt-2 hover:bg-emerald-100 transition-colors border border-emerald-200"
               >
-                Chat on WhatsApp ➔
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Chat on WhatsApp: 0333 7285603
               </a>
             </div>
           </div>
@@ -86,9 +87,9 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-gray-900">Email Support</h3>
-              <p className="text-xs text-gray-500 mt-0.5">Official inquiries & bulk orders</p>
-              <a href="mailto:support@servisbags.pk" className="text-sm font-bold text-blue-600 block mt-1 hover:underline">
-                support@servisbags.pk
+              <p className="text-xs text-gray-500 mt-0.5">Official inquiries & institutional bulk orders</p>
+              <a href="mailto:info@servisbags.pk" className="text-sm font-bold text-blue-600 block mt-1 hover:underline">
+                info@servisbags.pk
               </a>
             </div>
           </div>

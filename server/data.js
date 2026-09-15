@@ -1,5 +1,5 @@
 // High-quality product catalog for Servis Bags.
-// Realistic school bags and backpacks data with real specifications and high-res imagery.
+// Realistic school bags and backpacks data with real specifications and high-res local imagery.
 
 export let products = [
   {
@@ -16,21 +16,17 @@ export let products = [
     isNew: true,
     isFeatured: true,
     color: "Navy Blue",
-    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80"
-    ],
+    image: "/images/spine_guard_navy.jpg",
+    gallery: ["/images/spine_guard_navy.jpg"],
     rating: 4.9,
     reviewsCount: 48,
-    description: "Engineered specifically to alleviate back strain for school and college students. Features our certified S-curve lumbar support system, breathable 3D air-mesh back panel, and multi-tier organizational pockets.",
+    description: "Certified orthopedic school and college backpack engineered to alleviate spinal compression. Features our S-curve lumbar contour system, 3D air-mesh back ventilation, and heavy-duty water-repellent oxford fabric.",
     features: [
-      "Certified Orthopedic Spine-Guard back support",
-      "Padded 15.6-inch laptop & tablet sleeve",
-      "Reinforced water-resistant 900D Oxford nylon",
-      "Dual heavy-duty SBS smooth glide zippers",
-      "360-degree reflective safety bands for low-light visibility"
+      "Certified Orthopedic Spine-Guard back support with lumbar cushion",
+      "Padded 15.6-inch laptop & tablet sleeve with safety strap",
+      "Reinforced water-resistant 900D Oxford nylon construction",
+      "Dual heavy-duty smooth glide zippers with pull cords",
+      "360-degree reflective safety bands for morning & evening commutes"
     ],
     specs: {
       capacity: "30 Litres",
@@ -40,7 +36,7 @@ export let products = [
       warranty: "1 Year Official Servis Guarantee"
     },
     reviews: [
-      { id: 1, author: "Tariq Mahmood", rating: 5, date: "1 week ago", comment: "Best school bag I've bought for my 7th grader. The weight distribution is noticeable and shoulder padding is very comfortable." },
+      { id: 1, author: "Tariq Mahmood", rating: 5, date: "1 week ago", comment: "Best school bag I have bought for my 7th grader. The weight distribution is noticeable and shoulder padding is very comfortable." },
       { id: 2, author: "Sadia Khan", rating: 5, date: "3 weeks ago", comment: "Spacious enough for all heavy books plus a lunch box and water bottle. High quality zippers." }
     ]
   },
@@ -58,18 +54,14 @@ export let products = [
     isNew: false,
     isFeatured: true,
     color: "Stealth Black",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1509762774605-f07235a08f1f?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80"
-    ],
+    image: "/images/youth_explorer_black.jpg",
+    gallery: ["/images/youth_explorer_black.jpg"],
     rating: 4.8,
     reviewsCount: 39,
     description: "Sleek, minimalist aesthetic packed with high-capacity utility. Built for senior high schoolers and college students who carry books, gadgets, stationery, and sports gear.",
     features: [
       "3 main zippered compartments with 7 interior organizer pockets",
-      "Anti-scratch padded tech compartment",
+      "Anti-scratch padded 15.6-inch laptop compartment",
       "Hidden anti-theft rear pocket for wallet or smartphone",
       "Dual reinforced elastic mesh bottle holders",
       "Abrasion-resistant base with shock absorption layer"
@@ -100,20 +92,16 @@ export let products = [
     isNew: true,
     isFeatured: true,
     color: "Rose Pink / Multi",
-    image: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
-    ],
-    rating: 4.7,
-    reviewsCount: 31,
-    description: "Charming butterfly print combined with lightweight, kid-safe materials. Features easy-grab zip pullers, dual front utility pouches, and extra-cushioned shoulder straps designed for young children.",
+    image: "/images/butterfly_bag.jpg",
+    gallery: ["/images/butterfly_bag.jpg"],
+    rating: 4.9,
+    reviewsCount: 38,
+    description: "Charming butterfly print combined with lightweight, kid-safe materials. Features easy-grab zip pullers, dual front utility pouches, and extra-cushioned shoulder straps designed for young girls in primary school.",
     features: [
       "Lightweight Feather-Lite construction (only 450g)",
-      "Vibrant non-toxic fade-resistant digital print",
-      "Chest clip harness prevents shoulder straps from slipping",
-      "Waterproof easy-wipe inner lining for unexpected spills",
+      "Vibrant non-toxic fade-resistant butterfly digital print",
+      "Chest clip harness prevents shoulder straps from slipping off small shoulders",
+      "Waterproof easy-wipe inner lining for unexpected juice spills",
       "Personalized child name tag badge window"
     ],
     specs: {
@@ -124,13 +112,13 @@ export let products = [
       warranty: "1 Year Official Servis Guarantee"
     },
     reviews: [
-      { id: 1, author: "Fatima Noor", rating: 5, date: "4 days ago", comment: "My 6-year-old daughter loves this bag! Lightweight and cute colors." },
-      { id: 2, author: "Zainab Ali", rating: 5, date: "1 month ago", comment: "Print quality is sharp and colors don't wash off easily." }
+      { id: 1, author: "Fatima Noor", rating: 5, date: "4 days ago", comment: "My 6-year-old daughter loves this butterfly bag! Lightweight and cute colors." },
+      { id: 2, author: "Zainab Ali", rating: 5, date: "1 month ago", comment: "Print quality is sharp and colors do not wash off easily." }
     ]
   },
   {
     id: "SB-004",
-    title: "Servis Galactic Robot Print Kids Bag",
+    title: "Servis Galactic Robot Space Kids Bag",
     sku: "JNR-RBT-BLU",
     category: "printed",
     brand: "Servis Kids",
@@ -141,18 +129,14 @@ export let products = [
     inStock: true,
     isNew: true,
     isFeatured: true,
-    color: "Electric Blue Multi",
-    image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
-    ],
+    color: "Electric Blue Space",
+    image: "/images/robot_bag.jpg",
+    gallery: ["/images/robot_bag.jpg"],
     rating: 4.8,
-    reviewsCount: 22,
-    description: "Vibrant sci-fi robot graphics with glowing reflective accents. Tough and adventure-proof with high-tensile stitching around load points to handle energetic school days.",
+    reviewsCount: 29,
+    description: "Vibrant sci-fi robot and cosmic space graphics with glowing reflective accents. Tough and adventure-proof with high-tensile stitching around load points to handle active school days.",
     features: [
-      "Reinforced corner guards for rough handling",
+      "Reinforced corner guards for rough playground handling",
       "Easy-clean wipeable surface resistant to dirt and rain",
       "Ergonomic curved straps with soft edge piping",
       "Integrated key clip and pencil case loop",
@@ -166,7 +150,7 @@ export let products = [
       warranty: "1 Year Official Servis Guarantee"
     },
     reviews: [
-      { id: 1, author: "Kamran Shah", rating: 5, date: "1 week ago", comment: "My son was thrilled! Heavy stitching and very sturdy handle on top." }
+      { id: 1, author: "Kamran Shah", rating: 5, date: "1 week ago", comment: "My son was thrilled with the robot print! Heavy stitching and very sturdy handle on top." }
     ]
   },
   {
@@ -183,12 +167,8 @@ export let products = [
     isNew: false,
     isFeatured: false,
     color: "Mustard Gold",
-    image: "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1509762774605-f07235a08f1f?auto=format&fit=crop&w=800&q=80"
-    ],
+    image: "/images/scholar_mustard.jpg",
+    gallery: ["/images/scholar_mustard.jpg"],
     rating: 4.6,
     reviewsCount: 27,
     description: "Timeless campus backpack featuring vintage aesthetics with modern durability. Water-shield coated canvas, brass-finish pullers, and dedicated tech compartment.",
@@ -212,43 +192,39 @@ export let products = [
   },
   {
     id: "SB-006",
-    title: "Servis Pastel Chic Aesthetic Daypack",
-    sku: "YTH-PST-PNK",
+    title: "Servis Junior Teddy Bear Plush Primary Bag",
+    sku: "JNR-TDY-PNK",
     category: "primary",
-    brand: "Servis ACE",
-    originalPrice: 3699,
-    discountedPrice: 2899,
-    discountPercent: 22,
+    brand: "Servis Kids",
+    originalPrice: 3299,
+    discountedPrice: 2499,
+    discountPercent: 24,
     badge: "Popular",
     inStock: true,
     isNew: true,
     isFeatured: true,
-    color: "Blush Pink",
-    image: "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=800&q=80"
-    ],
+    color: "Pastel Peach Pink",
+    image: "/images/teddy_bear_bag.jpg",
+    gallery: ["/images/teddy_bear_bag.jpg"],
     rating: 4.9,
-    reviewsCount: 43,
-    description: "Soft pastel tones paired with functional compartments. Perfect for middle and high school students who want a lightweight, stylish bag for textbooks, art supplies, and accessories.",
+    reviewsCount: 41,
+    description: "Adorable primary school bag featuring a soft 3D plush teddy bear mascot. Designed with gentle padded straps, easy-snap buckle, and water-repellent peach fabric.",
     features: [
-      "Pastel matte finish with dirt-repellent coating",
-      "Quick-access front zippered organizer",
-      "Dual elastic water bottle sleeves",
-      "Ergonomic soft breathable back padding",
-      "Lightweight design weighing under 500g"
+      "Plush 3D teddy bear mascot on front panel",
+      "Ergonomic extra-cushioned air-mesh shoulder harness",
+      "Dual easy-access front snack & stationery pockets",
+      "Lightweight durable twill polyester (weighs just 460g)",
+      "Reinforced top handle for easy classroom hanging"
     ],
     specs: {
-      capacity: "25 Litres",
-      dimensions: "43 x 30 x 16 cm",
-      weight: "490 grams",
-      material: "Premium Lightweight Polyester",
+      capacity: "19 Litres",
+      dimensions: "38 x 28 x 14 cm",
+      weight: "460 grams",
+      material: "Water-Repellent Twill Nylon + Soft Plush",
       warranty: "1 Year Official Servis Guarantee"
     },
     reviews: [
-      { id: 1, author: "Mehak Javed", rating: 5, date: "3 days ago", comment: "So aesthetic and comfortable! Carries all my notebooks easily." }
+      { id: 1, author: "Amina Farooq", rating: 5, date: "3 days ago", comment: "My daughter carries this to kindergarten every day! The teddy bear looks so cute and high quality." }
     ]
   },
   {
@@ -265,12 +241,8 @@ export let products = [
     isNew: false,
     isFeatured: true,
     color: "Heather Grey",
-    image: "https://images.unsplash.com/photo-1509762774605-f07235a08f1f?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1509762774605-f07235a08f1f?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80"
-    ],
+    image: "/images/urban_pro_grey.jpg",
+    gallery: ["/images/urban_pro_grey.jpg"],
     rating: 4.9,
     reviewsCount: 52,
     description: "Professional grade build with structured silhouette that stays upright when set on desks or floors. Equipped with smart cable pass-through and TSA-friendly lay-flat design.",
@@ -306,12 +278,8 @@ export let products = [
     isNew: false,
     isFeatured: false,
     color: "Crimson Red / Black",
-    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80"
-    ],
+    image: "/images/active_sport_red.jpg",
+    gallery: ["/images/active_sport_red.jpg"],
     rating: 4.6,
     reviewsCount: 18,
     description: "Dynamic sporty aesthetics tailored for energetic school students who transition directly from study periods to football, basketball, and after-school clubs.",
@@ -347,12 +315,8 @@ export let products = [
     isNew: false,
     isFeatured: false,
     color: "Royal Blue / Green",
-    image: "https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
-    ],
+    image: "/images/junior_adventure_blue.jpg",
+    gallery: ["/images/junior_adventure_blue.jpg"],
     rating: 4.5,
     reviewsCount: 15,
     description: "Compact, durable primary backpack sized for grades 1 to 4. Engineered to hold standard notebooks and folders without bending edges, featuring easy-slide oversized zippers.",
@@ -376,7 +340,7 @@ export let products = [
   },
   {
     id: "SB-010",
-    title: "Servis Monster Truck Dynamic Kids Pack",
+    title: "Servis Monster Truck 3D Dynamic Kids Pack",
     sku: "JNR-TRK-BLK",
     category: "printed",
     brand: "Servis Kids",
@@ -388,21 +352,17 @@ export let products = [
     isNew: true,
     isFeatured: false,
     color: "Charcoal Monster Print",
-    image: "https://images.unsplash.com/photo-1577733975197-20072c4ce9d7?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1577733975197-20072c4ce9d7?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
-    ],
-    rating: 4.7,
-    reviewsCount: 20,
-    description: "Bold 3D embossed monster truck motif that kids love. Tough shell front prevents crushing of school supplies, lunches, and art equipment.",
+    image: "/images/monster_truck_bag.jpg",
+    gallery: ["/images/monster_truck_bag.jpg"],
+    rating: 4.8,
+    reviewsCount: 26,
+    description: "Bold 3D embossed red monster truck design on charcoal black canvas. Tough front panel prevents crushing of school lunchboxes, pencils, and art materials.",
     features: [
-      "Semi-rigid molded 3D embossed front panel",
+      "Semi-rigid molded 3D embossed monster truck front panel",
       "Multi-divider internal book organizer",
       "Comfort-fit shoulder harness with chest buckle",
       "Dual thermal-insulated side bottle holders",
-      "Water-resistant zips keep rain out"
+      "Water-resistant heavy-duty SBS zippers"
     ],
     specs: {
       capacity: "22 Litres",

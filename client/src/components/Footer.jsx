@@ -65,12 +65,23 @@ export default function Footer() {
             <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
               Pakistan's trusted student backpack brand. Engineered with certified orthopedic spine support, high-density waterproof nylon, and heavy-duty reinforced construction.
             </p>
-            <div className="flex items-center gap-4 text-xs text-neutral-400 pt-2">
-              <span className="flex items-center gap-1">
-                <Phone size={14} className="text-brand" /> +92 300 1234567
-              </span>
-              <span className="flex items-center gap-1">
-                <Mail size={14} className="text-brand" /> support@servisbags.pk
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs text-neutral-300 pt-2">
+              <a
+                href="https://wa.me/923337285603?text=Hi%20Servis%20Bags%2C%20I%20have%20an%20inquiry"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-emerald-400 flex items-center gap-1.5 transition-colors font-semibold"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                WhatsApp: 0333 7285603
+              </a>
+              <span className="hidden sm:inline text-neutral-600">•</span>
+              <a href="tel:03337285603" className="hover:text-white flex items-center gap-1.5 transition-colors">
+                <Phone size={13} className="text-brand" /> 0333-7285603
+              </a>
+              <span className="hidden sm:inline text-neutral-600">•</span>
+              <span className="flex items-center gap-1 text-neutral-400">
+                <Mail size={13} className="text-brand" /> info@servisbags.pk
               </span>
             </div>
           </div>

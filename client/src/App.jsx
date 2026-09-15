@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import CartDrawer from "./components/CartDrawer.jsx";
+import WhatsAppButton from "./components/WhatsAppButton.jsx";
 
 // Pages
 import Home from "./pages/Home.jsx";
@@ -131,6 +132,9 @@ export default function App() {
 
         {/* Professional Footer */}
         <Footer />
+
+        {/* Persistent Floating WhatsApp Assistance Button */}
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );

@@ -144,19 +144,21 @@ export default function ProductDetail({ onAddToCart, onBuyNow }) {
           </div>
 
           {/* Thumbnails strip */}
-          <div className="flex items-center gap-3 overflow-x-auto pb-1">
-            {gallery.map((imgUrl, idx) => (
-              <button
-                key={idx}
-                onClick={() => setSelectedImage(imgUrl)}
-                className={`w-20 h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 bg-gray-50 transition-all ${
-                  selectedImage === imgUrl ? "border-brand shadow-md scale-95" : "border-gray-200 hover:border-gray-400"
-                }`}
-              >
-                <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
-              </button>
-            ))}
-          </div>
+          {gallery && gallery.length > 1 && (
+            <div className="flex items-center gap-3 overflow-x-auto pb-1">
+              {gallery.map((imgUrl, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedImage(imgUrl)}
+                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 flex-shrink-0 bg-gray-50 transition-all ${
+                    selectedImage === imgUrl ? "border-brand shadow-md scale-95" : "border-gray-200 hover:border-gray-400"
+                  }`}
+                >
+                  <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Right Column: Information & Purchase Controls */}
@@ -260,6 +262,16 @@ export default function ProductDetail({ onAddToCart, onBuyNow }) {
                     Buy It Now
                   </button>
                 </div>
+
+                <button
+                  onClick={() => {
+                    const text = `Assalam-o-Alaikum Servis Bags! I would like to order:\n\n• Product: ${title} (${sku})\n• Quantity: ${quantity}\n• Color: ${color}\n• Unit Price: Rs. ${discountedPrice.toLocaleString()}\n• Total: Rs. ${(discountedPrice * quantity).toLocaleString()}\n• Payment: Cash on Delivery\n\nPlease confirm availability and delivery!`;
+                    window.open(`https://wa.me/923337285603?text=${encodeURIComponent(text)}`, "_blank");
+                  }}
+                  className="w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-xs rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 uppercase tracking-wider"
+                >
+                  <span>💬 Instant Order on WhatsApp (0333-7285603)</span>
+                </button>
               </div>
             ) : (
               <div className="p-4 bg-gray-100 rounded-xl text-center text-xs font-bold text-gray-500">

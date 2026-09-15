@@ -75,7 +75,7 @@ export default function Home({ onAddToCart }) {
             <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
               <div className="aspect-square rounded-2xl overflow-hidden border-2 border-neutral-800 shadow-2xl relative bg-neutral-900 group">
                 <img
-                  src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/spine_guard_navy.jpg"
                   alt="Servis ACE Spine-Guard Backpack"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -162,7 +162,7 @@ export default function Home({ onAddToCart }) {
             className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-gray-900 border border-gray-200 shadow-sm block"
           >
             <img
-              src="https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=700&q=80"
+              src="/images/butterfly_bag.jpg"
               alt="Primary Kids School Bags"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
             />
@@ -179,7 +179,7 @@ export default function Home({ onAddToCart }) {
             className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-gray-900 border border-gray-200 shadow-sm block"
           >
             <img
-              src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80"
+              src="/images/youth_explorer_black.jpg"
               alt="Youth Backpacks"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
             />
@@ -196,7 +196,7 @@ export default function Home({ onAddToCart }) {
             className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-gray-900 border border-gray-200 shadow-sm block"
           >
             <img
-              src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80"
+              src="/images/spine_guard_navy.jpg"
               alt="Ergonomic Orthopedic Bags"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
             />
@@ -213,7 +213,7 @@ export default function Home({ onAddToCart }) {
             className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-gray-900 border border-gray-200 shadow-sm block"
           >
             <img
-              src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=700&q=80"
+              src="/images/robot_bag.jpg"
               alt="Graphic Prints"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
             />
@@ -273,7 +273,7 @@ export default function Home({ onAddToCart }) {
           </div>
           <div className="relative z-10 w-44 h-44 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0">
             <img
-              src="https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=600&q=80"
+              src="/images/teddy_bear_bag.jpg"
               alt="Promo bag"
               className="w-full h-full object-cover"
             />

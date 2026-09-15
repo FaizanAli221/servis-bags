@@ -51,7 +51,7 @@ export default function About() {
         <div className="lg:col-span-6">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
             <img
-              src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80"
+              src="/images/youth_explorer_black.jpg"
               alt="Backpack Craftsmanship"
               className="w-full h-full object-cover"
             />

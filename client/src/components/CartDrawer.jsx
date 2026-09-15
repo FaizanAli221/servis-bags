@@ -42,6 +42,26 @@ export default function CartDrawer({
     }
   }
 
+  function handleWhatsAppOrder() {
+    const itemsList = cartItems
+      .map(
+        (item) =>
+          `• ${item.quantity}x ${item.title} (${item.color}) - Rs. ${(
+            item.discountedPrice * item.quantity
+          ).toLocaleString()}`
+      )
+      .join("\n");
+
+    const text = `Assalam-o-Alaikum Servis Bags! I would like to place an order:\n\n${itemsList}\n\n*Subtotal:* Rs. ${subtotal.toLocaleString()}\n*Shipping:* ${
+      shipping === 0 ? "FREE" : "Rs. " + shipping
+    }\n*Total:* Rs. ${total.toLocaleString()}\n*Payment Method:* Cash on Delivery (COD)\n\nPlease confirm availability and dispatch!`;
+
+    window.open(
+      `https://wa.me/923337285603?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
+  }
+
   function handleClose() {
     setConfirmedOrder(null);
     setError("");
@@ -149,13 +169,23 @@ export default function CartDrawer({
                   <span>Rs.{total.toLocaleString()}</span>
                 </div>
                 {error && <p className="text-xs text-red-500">{error}</p>}
-                <button
-                  onClick={handleCheckout}
-                  disabled={placing}
-                  className="w-full mt-2 py-2.5 bg-brand text-white rounded-md font-semibold text-sm hover:bg-brand-dark disabled:opacity-60"
-                >
-                  {placing ? "Placing Order..." : "Checkout"}
-                </button>
+                
+                <div className="space-y-2 pt-1">
+                  <button
+                    onClick={handleCheckout}
+                    disabled={placing}
+                    className="w-full py-3 bg-brand text-white rounded-xl font-bold text-xs hover:bg-brand-dark transition-all disabled:opacity-60 shadow-sm uppercase tracking-wider"
+                  >
+                    {placing ? "Processing Order..." : "Proceed to Checkout (COD)"}
+                  </button>
+
+                  <button
+                    onClick={handleWhatsAppOrder}
+                    className="w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-bold text-xs transition-all shadow-sm flex items-center justify-center gap-1.5 uppercase tracking-wider"
+                  >
+                    <span>💬 Order via WhatsApp (0333-7285603)</span>
+                  </button>
+                </div>
               </div>
             )}
           </>
